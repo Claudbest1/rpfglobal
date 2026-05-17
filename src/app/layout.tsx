@@ -12,10 +12,6 @@ export const metadata: Metadata = {
   title: "Royal Priesthood Family Ministry | Coming Soon",
   description:
     "Royal Priesthood Family Ministry — Raising Kings and Priests by the Word and Prayer. Our website is under construction.",
-  icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
-  },
 };
 
 export default function RootLayout({
