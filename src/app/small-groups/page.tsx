@@ -1,20 +1,40 @@
+import { MinistryCard } from "@/components/content/MinistryCard";
+import { ProseSection } from "@/components/content/ProseSection";
 import { PageTemplate } from "@/components/layout/PageTemplate";
+import {
+	ministries,
+	ministriesIntro,
+	ministryAccents,
+} from "@/content/ministries";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata(
-  "Small Groups",
-  "Join a small group and grow in faith alongside like-minded believers.",
+	"Ministries",
+	"Explore the ministries of Royal Priesthood Family Ministry and how you can serve.",
 );
 
-export default function SmallGroupsPage() {
-  return (
-    <PageTemplate
-      title="Small Groups"
-      eyebrow="Community"
-      description="Build friendships, grow your faith, and find support in smaller community gatherings."
-      message="Small group information and sign-up are coming soon."
-      ctaHref="/connect"
-      ctaLabel="Express interest"
-    />
-  );
+export default function MinistriesPage() {
+	return (
+		<PageTemplate
+			title="Ministries"
+			eyebrow="About Us"
+			description="Serving God and His people through dedicated ministry arms across the church."
+		>
+			<div className="mx-auto max-w-4xl space-y-10">
+				<ProseSection>
+					<p className="text-lg text-rpf-ink">{ministriesIntro}</p>
+				</ProseSection>
+
+				<div className="space-y-8">
+					{ministries.map((ministry, index) => (
+						<MinistryCard
+							key={ministry.id}
+							ministry={ministry}
+							accent={ministryAccents[index % ministryAccents.length]}
+						/>
+					))}
+				</div>
+			</div>
+		</PageTemplate>
+	);
 }

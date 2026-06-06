@@ -11,6 +11,7 @@ export const mainNavigation: NavItem[] = [
     label: "Livestream",
     href: "/livestream",
   },
+  { label: "IBC", href: "/ibc" },
   {
     label: "About Us",
     href: "/about",
@@ -21,17 +22,8 @@ export const mainNavigation: NavItem[] = [
       { label: "Gatherings", href: "/about/gatherings" },
       { label: "Leadership", href: "/about/leadership" },
       { label: "Daily Confessions", href: "/daily-confessions" },
-      { label: "Small Groups", href: "/small-groups" },
-      { label: "Missions", href: "/missions" },
-      {
-        label: "What's Next",
-        href: "/serving",
-        children: [
-          { label: "Serving Opportunities", href: "/serving" },
-          { label: "Tools for Growth", href: "/resources/tools-for-growth" },
-          { label: "Next Generation", href: "/nextgen" },
-        ],
-      },
+      { label: "Ministries", href: "/small-groups" },
+      { label: "Outreaches", href: "/missions" },
     ],
   },
   { label: "Resources", href: "/resources" },

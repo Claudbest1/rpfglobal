@@ -1,10 +1,29 @@
+import Image from "next/image";
+
 type PageHeroProps = {
   title: string;
   description?: string;
   eyebrow?: string;
+  image?: string;
 };
 
-export function PageHero({ title, description, eyebrow }: PageHeroProps) {
+export function PageHero({ title, description, eyebrow, image }: PageHeroProps) {
+  if (image) {
+    return (
+      <section className="relative min-h-[64vh] overflow-hidden border-b border-slate-200/60 sm:min-h-[72vh]">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="100vw"
+          priority
+          unoptimized
+          className="object-cover object-center"
+        />
+      </section>
+    );
+  }
+
   return (
     <section className="section-hero-gradient border-b border-slate-200/60 px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl text-center">

@@ -12,6 +12,7 @@ export default function LivestreamPage() {
     <PageTemplate
       title="Livestream"
       description="Experience our services online. Join us live for worship, teaching, and fellowship."
+      heroImage="/images/livestream.png"
     >
       <YouTubeLivePlayer />
     </PageTemplate>

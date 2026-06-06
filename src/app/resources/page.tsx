@@ -19,9 +19,9 @@ const resourceLinks = [
     description: "Practical resources for spiritual maturity.",
   },
   {
-    title: "Small Groups",
+    title: "Ministries",
     href: "/small-groups",
-    description: "Connect with others in community.",
+    description: "Explore and serve through our church ministries.",
   },
 ];
 

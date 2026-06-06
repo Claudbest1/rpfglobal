@@ -2,17 +2,17 @@ import { PageTemplate } from "@/components/layout/PageTemplate";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata(
-  "Missions",
-  "Our mission outreach and global impact initiatives.",
+  "Outreaches",
+  "Our outreach initiatives and global impact.",
 );
 
 export default function MissionsPage() {
   return (
     <PageTemplate
-      title="Missions"
+      title="Outreaches"
       eyebrow="Outreach"
       description="Taking the gospel and practical support to communities around the world."
-      message="Mission updates and opportunities are being prepared."
+      message="Outreach updates and opportunities are being prepared."
     />
   );
 }
