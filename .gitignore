@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# uncompressed video sources (use compressed files in public/videos/ibc/)
+public/videos/ibc/*-source.mp4
