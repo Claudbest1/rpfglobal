@@ -10,25 +10,28 @@ export const metadata = createPageMetadata(
 const mediaLinks = [
   {
     title: "Message Series",
-    href: "/media/messages",
+    href: "/messages",
     description: "Teaching series to deepen your faith and understanding.",
   },
   {
     title: "Worship",
-    href: "/media/worship",
+    href: "/worship",
     description: "Music and worship experiences from our ministry.",
   },
   {
     title: "Podcasts",
-    href: "/media/podcasts",
+    href: "/podcasts",
     description: "Audio content for encouragement and growth on the go.",
   },
   {
     title: "Testimonies",
-    href: "/media/testimonies",
+    href: "/testimonies",
     description: "Stories of faith, transformation, and God's faithfulness.",
   },
-];
+].map(link => ({
+    ...link,
+  href: `/media${link.href}`,
+}))
 
 export default function MediaPage() {
   return (
