@@ -7,6 +7,7 @@ type PageTemplateProps = {
   eyebrow?: string;
   heroImage?: string;
   heroImageMobile?: string;
+  heroAction?: React.ReactNode;
   message?: string;
   ctaHref?: string;
   ctaLabel?: string;
@@ -19,6 +20,7 @@ export function PageTemplate({
   eyebrow,
   heroImage,
   heroImageMobile,
+  heroAction,
   message,
   ctaHref,
   ctaLabel,
@@ -32,6 +34,7 @@ export function PageTemplate({
         eyebrow={eyebrow}
         image={heroImage}
         mobileImage={heroImageMobile}
+        action={heroAction}
       />
       <section className="bg-rpf-surface-alt px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         {children ?? (

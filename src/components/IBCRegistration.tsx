@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { TallyPopupButton } from "@/components/TallyPopupButton";
+import { IBCRegisterButton } from "@/components/IBCRegisterButton";
 import { ibcConfig } from "@/config/ibc";
 
 export function IBCRegistration() {
-	const { tallyFormId, whatsappGroupUrl } = ibcConfig;
+	const { whatsappGroupUrl } = ibcConfig;
 
 	return (
 		<section id="register" className="scroll-mt-24 px-6 py-10 sm:px-8 sm:py-10">
@@ -32,13 +32,7 @@ export function IBCRegistration() {
 			</div>
 
 			<div className="mt-8 flex flex-wrap justify-center gap-4">
-				<TallyPopupButton
-					formId={tallyFormId}
-					redirectUrl={whatsappGroupUrl}
-					className="btn-primary rounded-full px-8 py-3.5 text-base font-semibold shadow-lg shadow-rpf-orange/25 disabled:cursor-wait disabled:opacity-60"
-				>
-					Register for IBC 2026
-				</TallyPopupButton>
+				<IBCRegisterButton />
 				<a
 					href={whatsappGroupUrl}
 					target="_blank"

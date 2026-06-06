@@ -42,6 +42,7 @@ type TallyPopupButtonProps = {
 	className?: string;
 	openOnLoad?: boolean;
 	allowPageScroll?: boolean;
+	loadScript?: boolean;
 	popupOptions?: Omit<TallyPopupOptions, "onSubmit" | "onOpen" | "onClose">;
 };
 
@@ -62,10 +63,31 @@ export function TallyPopupButton({
 	className,
 	openOnLoad = false,
 	allowPageScroll = true,
+	loadScript = true,
 	popupOptions,
 }: TallyPopupButtonProps) {
 	const [ready, setReady] = useState(false);
 	const hasAutoOpened = useRef(false);
+
+	useEffect(() => {
+		if (loadScript) return;
+
+		const markReady = () => {
+			if ((window as TallyWindow).Tally?.openPopup) {
+				setReady(true);
+				return true;
+			}
+			return false;
+		};
+
+		if (markReady()) return;
+
+		const interval = window.setInterval(() => {
+			if (markReady()) window.clearInterval(interval);
+		}, 100);
+
+		return () => window.clearInterval(interval);
+	}, [loadScript]);
 
 	const openPopup = useCallback(() => {
 		const tally = (window as TallyWindow).Tally;
@@ -127,11 +149,14 @@ export function TallyPopupButton({
 					{children}
 				</button>
 			)}
-			<Script
-				src="https://tally.so/widgets/embed.js"
-				strategy="afterInteractive"
-				onLoad={() => setReady(true)}
-			/>
+			{loadScript && (
+				<Script
+					id="tally-embed"
+					src="https://tally.so/widgets/embed.js"
+					strategy="afterInteractive"
+					onLoad={() => setReady(true)}
+				/>
+			)}
 		</>
 	);
 }
