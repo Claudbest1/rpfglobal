@@ -6,6 +6,7 @@ type PageHeroProps = {
   eyebrow?: string;
   image?: string;
   mobileImage?: string;
+  action?: React.ReactNode;
 };
 
 export function PageHero({
@@ -14,6 +15,7 @@ export function PageHero({
   eyebrow,
   image,
   mobileImage,
+  action,
 }: PageHeroProps) {
   if (image || mobileImage) {
     return (
@@ -43,6 +45,11 @@ export function PageHero({
                 : "object-cover object-center"
             }
           />
+        )}
+        {action && (
+          <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center px-4 sm:bottom-10">
+            {action}
+          </div>
         )}
       </section>
     );

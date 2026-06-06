@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { IBCHeroRegister } from "@/components/IBCHeroRegister";
 import { IBCTallyPopup } from "@/components/IBCTallyPopup";
 import { IBCRegistration } from "@/components/IBCRegistration";
 import { IBCVideos } from "@/components/IBCVideos";
@@ -29,6 +30,7 @@ export default function IBCPage() {
 			description="An annual convocation gathering believers for worship, teaching, and fellowship."
 			heroImage={ibcConfig.heroImages.desktop}
 			heroImageMobile={ibcConfig.heroImages.mobile}
+			heroAction={<IBCHeroRegister />}
 		>
 			<div className="mx-auto max-w-4xl space-y-12">
 				<ProseSection title="About IBC">
