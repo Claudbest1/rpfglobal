@@ -6,10 +6,7 @@ export function IBCRegistration() {
 	const { tallyFormId, whatsappGroupUrl } = ibcConfig;
 
 	return (
-		<section
-			id="register"
-			className="scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-6 shadow-lg sm:p-8"
-		>
+		<section id="register" className="scroll-mt-24 px-6 py-10 sm:px-8 sm:py-10">
 			<p className="text-sm font-semibold uppercase tracking-wider text-rpf-purple">
 				Register
 			</p>
@@ -19,8 +16,8 @@ export function IBCRegistration() {
 			<div className="mt-4 space-y-4 text-base leading-relaxed text-rpf-ink-muted">
 				<p>Hello esteemed Kings and Priests,</p>
 				<p>
-					We welcome you to our annual International Believers&apos;
-					Convergence themed <strong className="text-rpf-ink">Grace and Truth</strong>.
+					We welcome you to our annual International Believers&apos; Convergence
+					themed <strong className="text-rpf-ink">Grace and Truth</strong>.
 				</p>
 				<p>
 					We are delighted to have you join us for this impactful gathering of
@@ -28,9 +25,9 @@ export function IBCRegistration() {
 					God&apos;s Word and fellowship.
 				</p>
 				<p>
-					The registration form opens when you visit this page. After submitting,
-					you will be directed to our WhatsApp group. You can also click below
-					to open it again.
+					The registration form opens when you visit this page. After
+					submitting, you will be directed to our WhatsApp group. You can also
+					click below to open it again.
 				</p>
 			</div>
 

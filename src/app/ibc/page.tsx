@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { IBCTallyPopup } from "@/components/IBCTallyPopup";
 import { IBCRegistration } from "@/components/IBCRegistration";
+import { IBCVideos } from "@/components/IBCVideos";
 import { LocationMap } from "@/components/LocationMap";
 import { ProseSection } from "@/components/content/ProseSection";
 import { PageTemplate } from "@/components/layout/PageTemplate";
@@ -84,7 +85,15 @@ export default function IBCPage() {
 					address={ibcConfig.location.address}
 					title="Find Us"
 				/>
+			</div>
 
+			<div className="section-blue -mx-4 border-y border-rpf-blue/10 px-4 py-12 sm:-mx-6 sm:px-6 sm:py-16 lg:-mx-8 lg:px-8">
+				<div className="mx-auto max-w-4xl">
+					<IBCVideos />
+				</div>
+			</div>
+
+			<div className="mx-auto max-w-4xl space-y-12">
 				<IBCRegistration />
 
 				<div className="overflow-hidden rounded-2xl shadow-md sm:rounded-3xl">
