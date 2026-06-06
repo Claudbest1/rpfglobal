@@ -1,67 +1,73 @@
-import Image from "next/image";
+import Link from "next/link";
+import { HappeningGrid } from "@/components/HappeningGrid";
+import { HeroVideo } from "@/components/HeroVideo";
 import { SocialLinks } from "@/components/SocialLinks";
+import { WelcomeSection } from "@/components/WelcomeSection";
+import { happenings } from "@/content/happenings";
+import { siteConfig } from "@/config/site";
 
 export default function Home() {
 	return (
-		<div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-16">
-			<div aria-hidden className="pointer-events-none absolute inset-0">
-				<Image
-					src="/images/bg.png"
-					alt=""
-					fill
-					priority
-					sizes="100vw"
-					className="object-cover object-center opacity-50"
-				/>
-				<div className="absolute inset-0 bg-black/45" />
-			</div>
-
-			<main className="relative z-10 flex max-w-5xl flex-col items-center text-center">
-				<div className="animate-float mb-10">
-					<div className="relative">
-						<div aria-hidden className="absolute -inset-6 " />
-						<Image
-							src="/images/logo.png"
-							alt="Royal Priesthood Family Ministry logo"
-							width={280}
-							height={280}
-							priority
-							unoptimized
-							className="relative bg-transparent"
-						/>
-					</div>
+		<>
+			<section className="relative flex min-h-[64vh] items-center justify-center overflow-hidden px-4 py-20 sm:min-h-[72vh] sm:px-6 sm:py-28 lg:px-8">
+				<div aria-hidden className="pointer-events-none absolute inset-0">
+					<HeroVideo />
+					<div className="absolute inset-0 bg-gradient-to-b from-rpf-navy/75 via-rpf-navy/60 to-rpf-navy/85" />
 				</div>
 
-				<h1 className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-					<span className="bg-gradient-to-r from-rpf-periwinkle via-rpf-gold-soft to-rpf-gold bg-clip-text text-transparent animate-shimmer">
-						Site Under Construction
-					</span>
-				</h1>
+				<div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
+					<p className="mb-3 text-sm font-semibold uppercase tracking-widest text-rpf-orange">
+						Welcome to {siteConfig.shortName}
+					</p>
 
-				<p className="mb-12 max-w-lg text-base leading-relaxed text-white/70 sm:text-lg">
-					We are building something beautiful for our global family. Check back
-					soon for updates, teachings, and ways to connect with us.
-				</p>
+					<h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+						{siteConfig.tagline}
+					</h1>
 
-				<div className="w-full max-w-xs">
-					<div className="mb-2 flex justify-between text-xs text-rpf-periwinkle/70">
-						<span>Building in progress</span>
-						<span className="text-rpf-gold">Soon</span>
-					</div>
-					<div className="h-1 overflow-hidden rounded-full bg-white/10">
-						<div className="h-full w-2/3 rounded-full bg-gradient-to-r from-rpf-purple via-rpf-gold to-rpf-periwinkle animate-shimmer" />
+					<p className="mb-10 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+						{siteConfig.description}
+					</p>
+
+					<div className="flex flex-wrap items-center justify-center gap-4">
+						<Link
+							href="/livestream"
+							className="btn-primary rounded-full px-6 py-3 text-sm font-semibold shadow-lg shadow-rpf-orange/25"
+						>
+							Watch Live
+						</Link>
+						<Link
+							href="/about"
+							className="rounded-full border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-rpf-navy"
+						>
+							About Us
+						</Link>
 					</div>
 				</div>
+			</section>
 
-				<SocialLinks />
-			</main>
+			<WelcomeSection />
 
-			<footer className="relative z-10 mt-16 text-center text-sm text-white/40">
-				<p>
-					&copy; {new Date().getFullYear()} Royal Priesthood Family Ministry.
-					All rights reserved.
-				</p>
-			</footer>
-		</div>
+			<section className="section-blue border-y border-rpf-blue/10 px-4 py-16 sm:px-6 lg:px-8">
+				<div className="mx-auto max-w-7xl">
+					<h2 className="mb-10 text-center text-2xl font-bold text-rpf-ink sm:text-3xl">
+						Happening at {siteConfig.shortName}
+					</h2>
+
+					<HappeningGrid items={happenings} />
+				</div>
+			</section>
+
+			<section className="section-purple px-4 py-16 sm:px-6 lg:px-8">
+				<div className="mx-auto max-w-3xl text-center">
+					<h2 className="text-2xl font-bold text-rpf-ink sm:text-3xl">
+						Get Connected
+					</h2>
+					<p className="mt-3 text-rpf-ink-muted">
+						Follow us for teachings, updates, and community
+					</p>
+					<SocialLinks />
+				</div>
+			</section>
+		</>
 	);
 }

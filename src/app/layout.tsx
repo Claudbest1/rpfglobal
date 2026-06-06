@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { SiteLayout } from "@/components/layout/SiteLayout";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -9,9 +11,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Royal Priesthood Family Ministry | Coming Soon",
-  description:
-    "Royal Priesthood Family Ministry — Raising Kings and Priests by the Word and Prayer. Our website is under construction.",
+  title: {
+    default: siteConfig.shortName,
+    template: `%s | ${siteConfig.shortName}`,
+  },
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
@@ -21,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} h-full`}>
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        <SiteLayout>{children}</SiteLayout>
+      </body>
     </html>
   );
 }

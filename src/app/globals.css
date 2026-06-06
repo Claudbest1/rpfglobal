@@ -1,23 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --rpf-black: #000000;
-  --rpf-purple-deep: #2d0a31;
-  --rpf-purple: #4c1d95;
-  --rpf-periwinkle: #a5b4fc;
-  --rpf-gold: #fbbf24;
-  --rpf-gold-soft: #fcd34d;
-  --rpf-cream: #f8fafc;
+  /* Core palette — bright & colorful like elevationng.org */
+  --rpf-ink: #0f172a;
+  --rpf-ink-muted: #475569;
+  --rpf-ink-light: #64748b;
+  --rpf-surface: #ffffff;
+  --rpf-surface-alt: #f8fafc;
+  --rpf-surface-muted: #f1f5f9;
+
+  --rpf-blue: #2563eb;
+  --rpf-blue-dark: #1d4ed8;
+  --rpf-blue-light: #dbeafe;
+  --rpf-orange: #f97316;
+  --rpf-orange-dark: #ea580c;
+  --rpf-orange-light: #ffedd5;
+  --rpf-purple: #7c3aed;
+  --rpf-purple-dark: #6d28d9;
+  --rpf-purple-light: #ede9fe;
+  --rpf-teal: #0d9488;
+  --rpf-teal-light: #ccfbf1;
+  --rpf-rose: #e11d48;
+  --rpf-rose-light: #ffe4e6;
+  --rpf-yellow: #facc15;
+  --rpf-navy: #1e3a5f;
+
+  /* Legacy token aliases (keeps existing class names working) */
+  --rpf-black: var(--rpf-ink);
+  --rpf-purple-deep: var(--rpf-navy);
+  --rpf-periwinkle: var(--rpf-blue);
+  --rpf-gold: var(--rpf-orange);
+  --rpf-gold-soft: #fb923c;
+  --rpf-cream: var(--rpf-surface);
 }
 
 @theme inline {
+  --color-rpf-ink: var(--rpf-ink);
+  --color-rpf-ink-muted: var(--rpf-ink-muted);
+  --color-rpf-ink-light: var(--rpf-ink-light);
+  --color-rpf-surface: var(--rpf-surface);
+  --color-rpf-surface-alt: var(--rpf-surface-alt);
+  --color-rpf-surface-muted: var(--rpf-surface-muted);
+  --color-rpf-blue: var(--rpf-blue);
+  --color-rpf-blue-dark: var(--rpf-blue-dark);
+  --color-rpf-blue-light: var(--rpf-blue-light);
+  --color-rpf-orange: var(--rpf-orange);
+  --color-rpf-orange-dark: var(--rpf-orange-dark);
+  --color-rpf-orange-light: var(--rpf-orange-light);
+  --color-rpf-purple: var(--rpf-purple);
+  --color-rpf-purple-dark: var(--rpf-purple-dark);
+  --color-rpf-purple-light: var(--rpf-purple-light);
+  --color-rpf-teal: var(--rpf-teal);
+  --color-rpf-teal-light: var(--rpf-teal-light);
+  --color-rpf-rose: var(--rpf-rose);
+  --color-rpf-rose-light: var(--rpf-rose-light);
+  --color-rpf-yellow: var(--rpf-yellow);
+  --color-rpf-navy: var(--rpf-navy);
+
   --color-rpf-black: var(--rpf-black);
   --color-rpf-purple-deep: var(--rpf-purple-deep);
-  --color-rpf-purple: var(--rpf-purple);
   --color-rpf-periwinkle: var(--rpf-periwinkle);
   --color-rpf-gold: var(--rpf-gold);
   --color-rpf-gold-soft: var(--rpf-gold-soft);
   --color-rpf-cream: var(--rpf-cream);
+
   --font-sans: var(--font-montserrat);
 }
 
@@ -26,9 +72,70 @@ html {
 }
 
 body {
-  background: var(--rpf-black);
-  color: var(--rpf-cream);
+  background: var(--rpf-surface);
+  color: var(--rpf-ink);
   font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+/* Reusable section backgrounds */
+.section-hero-gradient {
+  background: linear-gradient(
+    135deg,
+    #dbeafe 0%,
+    #ede9fe 35%,
+    #ffedd5 70%,
+    #fef9c3 100%
+  );
+}
+
+.section-blue {
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.section-purple {
+  background: linear-gradient(180deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+.section-orange {
+  background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 100%);
+}
+
+.section-teal {
+  background: linear-gradient(180deg, #f0fdfa 0%, #ccfbf1 100%);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--rpf-orange) 0%, var(--rpf-orange-dark) 100%);
+  color: white;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  border: 2px solid var(--rpf-blue);
+  color: var(--rpf-blue);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--rpf-blue);
+  color: white;
+}
+
+.card-colorful {
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px -4px rgba(15, 23, 42, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card-colorful:hover {
+  box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.14);
+  transform: translateY(-2px);
 }
 
 @keyframes float {
@@ -38,18 +145,6 @@ body {
   }
   50% {
     transform: translateY(-8px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
   }
 }
 
@@ -64,10 +159,6 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
 }
 
 .animate-shimmer {

@@ -2,6 +2,7 @@ type SocialLink = {
 	name: string;
 	href: string;
 	icon: "youtube" | "instagram" | "facebook";
+	color: string;
 };
 
 const socialLinks: SocialLink[] = [
@@ -9,21 +10,25 @@ const socialLinks: SocialLink[] = [
 		name: "RPF Global on YouTube",
 		href: "https://www.youtube.com/@RPFGLOBAL",
 		icon: "youtube",
+		color: "hover:border-red-500 hover:bg-red-50 hover:text-red-600",
 	},
 	{
 		name: "Temidayo Aderibigbe on YouTube",
 		href: "https://www.youtube.com/@TemidayoAderibigbe",
 		icon: "youtube",
+		color: "hover:border-red-500 hover:bg-red-50 hover:text-red-600",
 	},
 	{
 		name: "RPF Global on Instagram",
 		href: "https://www.instagram.com/rpfglobal",
 		icon: "instagram",
+		color: "hover:border-pink-500 hover:bg-pink-50 hover:text-pink-600",
 	},
 	{
 		name: "Royal Priesthood Family on Facebook",
 		href: "https://web.facebook.com/rpfglobal",
 		icon: "facebook",
+		color: "hover:border-blue-600 hover:bg-blue-50 hover:text-blue-600",
 	},
 ];
 
@@ -67,13 +72,25 @@ function SocialIcon({ icon }: { icon: SocialLink["icon"] }) {
 	}
 }
 
-export function SocialLinks() {
+export function SocialLinks({
+	compact = false,
+	variant = "default",
+}: {
+	compact?: boolean;
+	variant?: "default" | "footer";
+}) {
+	const isFooter = variant === "footer";
+
 	return (
-		<nav aria-label="Social media" className="mt-10">
-			<p className="mb-4 text-sm font-medium uppercase tracking-widest text-rpf-periwinkle/80">
-				Follow us
-			</p>
-			<ul className="flex flex-wrap items-center justify-center gap-3">
+		<nav aria-label="Social media" className={compact ? "" : "mt-10"}>
+			{!compact && (
+				<p className="mb-4 text-sm font-semibold uppercase tracking-widest text-rpf-purple">
+					Follow us
+				</p>
+			)}
+			<ul
+				className={`flex flex-wrap items-center gap-3 ${compact ? "justify-start" : "justify-center"}`}
+			>
 				{socialLinks.map((link) => (
 					<li key={link.name}>
 						<a
@@ -82,7 +99,11 @@ export function SocialLinks() {
 							rel="noopener noreferrer"
 							aria-label={link.name}
 							title={link.name}
-							className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-rpf-gold/50 hover:bg-rpf-gold/10 hover:text-rpf-gold"
+							className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-colors ${
+								isFooter
+									? "border-white/20 bg-white/10 text-white/80 hover:border-rpf-orange hover:bg-rpf-orange/20 hover:text-white"
+									: `border-slate-200 bg-white text-rpf-ink-muted shadow-sm ${link.color}`
+							}`}
 						>
 							<SocialIcon icon={link.icon} />
 						</a>

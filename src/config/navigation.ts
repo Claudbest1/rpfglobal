@@ -1,0 +1,60 @@
+export type NavItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+  children?: NavItem[];
+};
+
+export const mainNavigation: NavItem[] = [
+  { label: "Home", href: "/" },
+  {
+    label: "Livestream",
+    href: "/livestream",
+  },
+  {
+    label: "About Us",
+    href: "/about",
+    children: [
+      { label: "About RPF", href: "/about" },
+      { label: "Our Story", href: "/about/our-story" },
+      { label: "Vision & Mission", href: "/about/beliefs" },
+      { label: "Gatherings", href: "/about/gatherings" },
+      { label: "Leadership", href: "/about/leadership" },
+      { label: "Daily Confessions", href: "/daily-confessions" },
+      { label: "Small Groups", href: "/small-groups" },
+      { label: "Missions", href: "/missions" },
+      {
+        label: "What's Next",
+        href: "/serving",
+        children: [
+          { label: "Serving Opportunities", href: "/serving" },
+          { label: "Tools for Growth", href: "/resources/tools-for-growth" },
+          { label: "Next Generation", href: "/nextgen" },
+        ],
+      },
+    ],
+  },
+  { label: "Resources", href: "/resources" },
+  {
+    label: "Media",
+    href: "/media",
+    children: [
+      { label: "Message Series", href: "/media/messages" },
+      { label: "Worship", href: "/media/worship" },
+      { label: "Podcasts", href: "/media/podcasts" },
+      { label: "Testimonies", href: "/media/testimonies" },
+    ],
+  },
+  { label: "Give", href: "/give" },
+  { label: "Connect", href: "/connect" },
+];
+
+export const footerNavigation: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Our Story", href: "/about/our-story" },
+  { label: "Gatherings", href: "/about/gatherings" },
+  { label: "Media", href: "/media" },
+  { label: "Give", href: "/give" },
+  { label: "Connect", href: "/connect" },
+];
