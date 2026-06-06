@@ -1,4 +1,8 @@
 export const ibcConfig = {
+	heroImages: {
+		mobile: "/images/portrait.jpg",
+		desktop: "/images/website-banner.png",
+	},
 	theme: "Grace & Truth",
 	dates: "24th – 28th June 2026",
 	location: {

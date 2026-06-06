@@ -5,21 +5,45 @@ type PageHeroProps = {
   description?: string;
   eyebrow?: string;
   image?: string;
+  mobileImage?: string;
 };
 
-export function PageHero({ title, description, eyebrow, image }: PageHeroProps) {
-  if (image) {
+export function PageHero({
+  title,
+  description,
+  eyebrow,
+  image,
+  mobileImage,
+}: PageHeroProps) {
+  if (image || mobileImage) {
     return (
-      <section className="relative min-h-[64vh] overflow-hidden border-b border-slate-200/60 sm:min-h-[72vh]">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="100vw"
-          priority
-          unoptimized
-          className="object-cover object-center"
-        />
+      <section className="relative min-h-[64vh] overflow-hidden border-b border-slate-200/60 bg-rpf-navy sm:min-h-[72vh]">
+        {mobileImage && (
+          <Image
+            src={mobileImage}
+            alt={title}
+            fill
+            sizes="100vw"
+            priority
+            unoptimized
+            className="object-contain object-center sm:hidden"
+          />
+        )}
+        {image && (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="100vw"
+            priority
+            unoptimized
+            className={
+              mobileImage
+                ? "hidden object-cover object-center sm:block"
+                : "object-cover object-center"
+            }
+          />
+        )}
       </section>
     );
   }

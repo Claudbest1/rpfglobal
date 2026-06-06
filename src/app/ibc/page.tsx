@@ -26,7 +26,8 @@ export default function IBCPage() {
 			title="IBC"
 			eyebrow="International Believers' Convergence"
 			description="An annual convocation gathering believers for worship, teaching, and fellowship."
-			heroImage="/images/website-banner.png"
+			heroImage={ibcConfig.heroImages.desktop}
+			heroImageMobile={ibcConfig.heroImages.mobile}
 		>
 			<div className="mx-auto max-w-4xl space-y-12">
 				<ProseSection title="About IBC">

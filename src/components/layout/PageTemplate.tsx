@@ -6,6 +6,7 @@ type PageTemplateProps = {
   description?: string;
   eyebrow?: string;
   heroImage?: string;
+  heroImageMobile?: string;
   message?: string;
   ctaHref?: string;
   ctaLabel?: string;
@@ -17,6 +18,7 @@ export function PageTemplate({
   description,
   eyebrow,
   heroImage,
+  heroImageMobile,
   message,
   ctaHref,
   ctaLabel,
@@ -29,6 +31,7 @@ export function PageTemplate({
         description={description}
         eyebrow={eyebrow}
         image={heroImage}
+        mobileImage={heroImageMobile}
       />
       <section className="bg-rpf-surface-alt px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         {children ?? (
