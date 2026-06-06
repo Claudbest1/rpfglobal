@@ -8,32 +8,42 @@ export const metadata = createPageMetadata(
   "Get connected with Royal Priesthood Family Ministry — prayer, counseling, and community.",
 );
 
-export default function ConnectPage() {
+
+interface ConnectCardProps {
+  title: string;
+  description: string;
+  children?: React.ReactNode;
+}
+
+const ConnectCard = ({ title, description, children }: ConnectCardProps) => (
+  <div className="rounded-lg border border-rpf-ink-muted/20 bg-white p-6 shadow-sm">
+    <h2 className="text-xl font-bold text-rpf-ink">{title}</h2>
+    <p className="mt-3 text-sm leading-relaxed text-rpf-ink-muted">{description}</p>
+    {children}
+  </div>
+);
+
+export default function GetConnectedPage() {
   return (
     <PageTemplate
       title="Get Connected"
       description="Whether you need prayer, counseling, or want to join our community — we are here for you."
     >
       <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
-        <div className="card-colorful rounded-2xl border-l-4 border-l-rpf-teal p-8">
-          <h2 className="text-xl font-bold text-rpf-ink">Need Counselling?</h2>
-          <p className="mt-3 text-sm leading-relaxed text-rpf-ink-muted">
-            Are you facing challenges, seeking guidance, or simply need someone
-            to talk to? Our team is available to provide confidential and
-            compassionate support.
-          </p>
+        
+        <ConnectCard 
+          title="Need Counselling?" 
+          description="Are you facing challenges, seeking guidance, or simply need someone to talk to? Our team is available to provide confidential and compassionate support."
+        >
           <p className="mt-4 text-sm font-medium text-rpf-teal">
-            A contact form is coming soon. Reach us via social media in the
-            meantime.
+            A contact form is coming soon. Reach us via social media in the meantime.
           </p>
-        </div>
+        </ConnectCard>
 
-        <div className="card-colorful rounded-2xl border-l-4 border-l-rpf-purple p-8">
-          <h2 className="text-xl font-bold text-rpf-ink">Follow Us</h2>
-          <p className="mt-3 text-sm leading-relaxed text-rpf-ink-muted">
-            Stay updated on teachings, events, and ways to connect with our
-            global family.
-          </p>
+        <ConnectCard 
+          title="Follow Us" 
+          description="Stay updated on teachings, events, and ways to connect with our global family."
+        >
           <div className="mt-6">
             <SocialLinks compact />
           </div>
@@ -48,7 +58,8 @@ export default function ConnectPage() {
               </a>
             </p>
           )}
-        </div>
+        </ConnectCard>
+
       </div>
     </PageTemplate>
   );

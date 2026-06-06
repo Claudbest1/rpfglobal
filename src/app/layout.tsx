@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { MetaPixel } from "@/components/MetaPixel";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
@@ -25,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} h-full`}>
+      <head>
+        <MetaPixel />
+      </head>
       <body className="min-h-full antialiased">
         <SiteLayout>{children}</SiteLayout>
       </body>
