@@ -58,7 +58,7 @@ export default function IBCPage() {
 						{schedule.map((item) => (
 							<div
 								key={item.day}
-								className="rounded-xl bg-white/80 px-4 py-3 text-center"
+								className="rounded-xl bg-white/80 px-4 py-3 text-left sm:text-center"
 							>
 								<p className="text-sm font-semibold text-rpf-ink">{item.day}</p>
 								<p className="mt-1 text-sm text-rpf-ink-muted">{item.time}</p>
