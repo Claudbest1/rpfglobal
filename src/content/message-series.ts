@@ -1,9 +1,15 @@
 import { getYouTubeId } from "@/lib/youtube";
 
+export type MessageAudio = {
+	telegramUrl?: string;
+	src?: string;
+};
+
 export type MessageVideo = {
 	id: string;
 	youtubeId: string;
 	title: string;
+	audio?: MessageAudio;
 };
 
 export type MessageSeries = {
@@ -40,6 +46,10 @@ export const messageSeries: MessageSeries[] = [
 					"https://youtu.be/hPTFSQLorlI?si=HJ8v8ghDWCyy-Qh5",
 				),
 				title: "Love Walk",
+				audio: {
+					src: "/audio/love-walk.mp3",
+					telegramUrl: "https://t.me/c/2241814198/238",
+				},
 			},
 		],
 	},
@@ -62,6 +72,10 @@ export const messageSeries: MessageSeries[] = [
 					"https://youtu.be/wGxkwfngISM?si=fENXVivANUJxe9xk",
 				),
 				title: "Church Life — Part 1",
+				audio: {
+					src: "/audio/church-life-part-1.mp3",
+					telegramUrl: "https://t.me/c/2241814198/237",
+				},
 			},
 			{
 				id: "church-life-2",
@@ -69,6 +83,10 @@ export const messageSeries: MessageSeries[] = [
 					"https://youtu.be/p_2GiBzcoa4?si=MyP4YqYlW9DypML3",
 				),
 				title: "Church Life — Part 2",
+				audio: {
+					src: "/audio/church-life-part-2.mp3",
+					telegramUrl: "https://t.me/c/2241814198/236",
+				},
 			},
 			{
 				id: "church-life-3",
@@ -76,6 +94,10 @@ export const messageSeries: MessageSeries[] = [
 					"https://youtu.be/XKwrPMmfpf0?si=_l6XzOYb0jRCzO5D",
 				),
 				title: "Church Life — Part 3",
+				audio: {
+					src: "/audio/church-life-part-3.mp3",
+					telegramUrl: "https://t.me/c/2241814198/235",
+				},
 			},
 			{
 				id: "church-life-4",
@@ -83,6 +105,10 @@ export const messageSeries: MessageSeries[] = [
 					"https://youtu.be/nFexyA9TMXY?si=zw2DLu-Qw-dd_iYo",
 				),
 				title: "Church Life — Part 4",
+				audio: {
+					src: "/audio/church-life-part-4.mp3",
+					telegramUrl: "https://t.me/c/2241814198/231",
+				},
 			},
 			{
 				id: "church-life-5",
@@ -90,6 +116,10 @@ export const messageSeries: MessageSeries[] = [
 					"https://youtu.be/gxTOI5RHMmg?si=BagKUf2eG7sDHWFm",
 				),
 				title: "Church Life — Part 5",
+				audio: {
+					src: "/audio/church-life-part-5.mp3",
+					telegramUrl: "https://t.me/c/2241814198/229",
+				},
 			},
 		],
 	},

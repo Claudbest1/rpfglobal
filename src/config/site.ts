@@ -24,5 +24,7 @@ export const siteConfig = {
     youtube: "https://www.youtube.com/@RPFGLOBAL",
     instagram: "https://www.instagram.com/rpfglobal",
     facebook: "https://web.facebook.com/rpfglobal",
+    /** Your public Telegram channel, e.g. https://t.me/rpfglobal */
+    telegram: "",
   },
 } as const;

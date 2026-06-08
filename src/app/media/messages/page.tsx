@@ -34,14 +34,26 @@ export default function MessagesPage() {
 						Subscribe to {siteConfig.shortName} on YouTube for new teachings,
 						live services, and series updates.
 					</p>
-					<Link
-						href={siteConfig.social.youtube}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="btn-primary mt-6 inline-block rounded-full px-8 py-3 text-sm font-semibold shadow-lg shadow-rpf-orange/25"
-					>
-						Subscribe on YouTube
-					</Link>
+					<div className="mt-6 flex flex-wrap justify-center gap-3">
+						<Link
+							href={siteConfig.social.youtube}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="btn-primary rounded-full px-8 py-3 text-sm font-semibold shadow-lg shadow-rpf-orange/25"
+						>
+							Subscribe on YouTube
+						</Link>
+						{siteConfig.social.telegram && (
+							<Link
+								href={siteConfig.social.telegram}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="rounded-full border-2 border-[#229ED9] px-8 py-3 text-sm font-semibold text-[#229ED9] transition-colors hover:bg-[#229ED9] hover:text-white"
+							>
+								Join on Telegram
+							</Link>
+						)}
+					</div>
 				</div>
 			</div>
 		</PageTemplate>

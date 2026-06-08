@@ -1,3 +1,4 @@
+import { MessageAudioPlayer } from "@/components/MessageAudioPlayer";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import type { MessageSeries } from "@/content/message-series";
 
@@ -11,6 +12,7 @@ export function MessageSeriesSection({
 	featured = false,
 }: MessageSeriesSectionProps) {
 	const isSingle = series.videos.length === 1;
+	const hasAudio = series.videos.some((video) => video.audio);
 
 	return (
 		<section
@@ -34,6 +36,7 @@ export function MessageSeriesSection({
 					<p className="mt-3 text-sm font-medium text-rpf-ink-light">
 						{series.videos.length}{" "}
 						{series.videos.length === 1 ? "message" : "messages"}
+						{hasAudio && " · watch or listen"}
 					</p>
 				</div>
 			</div>
@@ -47,11 +50,12 @@ export function MessageSeriesSection({
 					}
 				>
 					{series.videos.map((video) => (
-						<YouTubeEmbed
-							key={video.id}
-							videoId={video.youtubeId}
-							title={video.title}
-						/>
+						<div key={video.id} className="space-y-3">
+							<YouTubeEmbed videoId={video.youtubeId} title={video.title} />
+							{video.audio && (
+								<MessageAudioPlayer audio={video.audio} title={video.title} />
+							)}
+						</div>
 					))}
 				</div>
 			</div>
