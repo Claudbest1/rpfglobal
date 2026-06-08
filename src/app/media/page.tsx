@@ -14,6 +14,11 @@ const mediaLinks = [
     description: "Teaching series to deepen your faith and understanding.",
   },
   {
+    title: "Editorials",
+    href: "/editorials",
+    description: "Thoughtful articles and reflections on faith and life.",
+  },
+  {
     title: "Worship",
     href: "/worship",
     description: "Music and worship experiences from our ministry.",
