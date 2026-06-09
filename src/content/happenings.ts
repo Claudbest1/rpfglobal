@@ -6,6 +6,11 @@ export type HappeningItem = {
 
 export const happenings: HappeningItem[] = [
 	{
+		image: "/images/events/sop-june-government-of-the-spirit.png",
+		alt: "School of Prayer June Edition — Government of the Spirit: Territorial Intercession, 13th June 8AM at the House of Prayer",
+		href: "/about/gatherings",
+	},
+	{
 		image: "/images/events/love-walk.png",
 		alt: "Love Walk — new sermon series at Royal Priesthood Family Ministry",
 		href: "/media/messages",
