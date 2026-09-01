@@ -28,7 +28,7 @@ export function PageHero({
             sizes="100vw"
             priority
             unoptimized
-            className="object-contain object-center sm:hidden"
+            className="object-cover object-center sm:hidden"
           />
         )}
         {image && (

@@ -26,6 +26,7 @@ export const programmes: Programme[] = [
 		description:
 			"Supernatural Shift is a powerful programme designed to usher believers into a new dimension of faith, prayer, and the move of the Spirit.",
 		heroImage: "/images/Website banner.jpg",
+		heroImageMobile: "/images/Supernatural Shift_3.jpg",
 	},
 	{
 		id: "prayer-convocation",
