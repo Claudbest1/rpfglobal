@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { LocationMap } from "@/components/LocationMap";
+import { SupernaturalShiftHeroRegister } from "@/components/SupernaturalShiftHeroRegister";
+import { TelegramRegisterButton } from "@/components/TelegramRegisterButton";
 import { ProseSection } from "@/components/content/ProseSection";
 import { PageTemplate } from "@/components/layout/PageTemplate";
 import { getProgramme } from "@/content/programmes";
@@ -28,6 +30,7 @@ export default function SupernaturalShiftPage() {
 			description="Supernatural Shift & Dedication of the House of Prayer"
 			heroImage={programme.heroImage}
 			heroImageMobile={programme.heroImageMobile}
+			heroAction={<SupernaturalShiftHeroRegister />}
 		>
 			<div className="mx-auto max-w-4xl space-y-12">
 				<ProseSection title="About Supernatural Shift">
@@ -96,6 +99,10 @@ export default function SupernaturalShiftPage() {
 							+234 816 900 4209
 						</a>
 					</p>
+
+					<div className="mt-8 flex justify-center">
+						<TelegramRegisterButton variant="telegram" />
+					</div>
 				</section>
 
 				<div className="space-y-6">
@@ -135,6 +142,19 @@ export default function SupernaturalShiftPage() {
 						/>
 					</div>
 				</div>
+
+				<section className="rounded-2xl border border-[#229ED9]/20 bg-gradient-to-br from-[#229ED9]/10 via-white to-rpf-purple-light px-6 py-10 text-center shadow-md sm:px-10">
+					<h2 className="text-xl font-bold text-rpf-ink sm:text-2xl">
+						Ready to join us?
+					</h2>
+					<p className="mx-auto mt-3 max-w-xl text-rpf-ink-muted">
+						Register via our Telegram channel for updates, reminders, and
+						everything you need for Supernatural Shift.
+					</p>
+					<div className="mt-6 flex justify-center">
+						<TelegramRegisterButton variant="telegram" />
+					</div>
+				</section>
 
 				<LocationMap
 					name={location.name}
