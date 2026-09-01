@@ -11,7 +11,16 @@ export const mainNavigation: NavItem[] = [
     label: "Livestream",
     href: "/livestream",
   },
-  { label: "IBC", href: "/ibc" },
+  {
+    label: "Programme",
+    href: "/programme",
+    children: [
+      { label: "IBC", href: "/programme/ibc" },
+      { label: "Supernatural Shift", href: "/programme/supernatural-shift" },
+      { label: "Prayer Convocation", href: "/programme/prayer-convocation" },
+      { label: "Prayer Bootcamp", href: "/programme/prayer-bootcamp" },
+    ],
+  },
   {
     label: "About Us",
     href: "/about",
