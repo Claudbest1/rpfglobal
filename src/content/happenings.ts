@@ -23,11 +23,11 @@ export const happenings: HappeningItem[] = [
 	{
 		image: "/images/events/ibc-billboard.png",
 		alt: "International Believers' Convergence 2026 — Grace & Truth, free transportation",
-		href: "/ibc",
+		href: "/programme/ibc",
 	},
 	{
 		image: "/images/events/ibc-banner.png",
 		alt: "International Believers' Convergence 2026 — Grace & Truth",
-		href: "/ibc",
+		href: "/programme/ibc",
 	},
 ];
