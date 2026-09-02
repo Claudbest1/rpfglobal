@@ -1,3 +1,7 @@
+"use client";
+
+import { trackMetaEvent } from "@/lib/meta-pixel";
+
 const TELEGRAM_CHANNEL = "https://t.me/RPFglobal";
 
 function TelegramIcon() {
@@ -12,12 +16,14 @@ type TelegramRegisterButtonProps = {
 	className?: string;
 	variant?: "primary" | "telegram";
 	fullWidth?: boolean;
+	trackLead?: boolean;
 };
 
 export function TelegramRegisterButton({
 	className = "",
 	variant = "primary",
 	fullWidth = false,
+	trackLead = false,
 }: TelegramRegisterButtonProps) {
 	const base =
 		"inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold transition-colors";
@@ -28,11 +34,20 @@ export function TelegramRegisterButton({
 			? "border-2 border-[#229ED9] bg-[#229ED9] text-white hover:bg-[#1d8bc4] hover:border-[#1d8bc4] shadow-lg shadow-[#229ED9]/25"
 			: "btn-primary shadow-lg shadow-rpf-orange/25";
 
+	const handleClick = () => {
+		if (trackLead) {
+			trackMetaEvent("Lead", {
+				content_name: "Supernatural Shift Register",
+			});
+		}
+	};
+
 	return (
 		<a
 			href={TELEGRAM_CHANNEL}
 			target="_blank"
 			rel="noopener noreferrer"
+			onClick={handleClick}
 			className={`${base} ${width} ${styles} ${className}`}
 		>
 			<TelegramIcon />

@@ -6,6 +6,11 @@ export type HappeningItem = {
 
 export const happenings: HappeningItem[] = [
 	{
+		image: "/images/events/arome-osayi-7-years-ago.jpg",
+		alt: "Apostle Arome Osayi at Royal Priesthood Family Ministry — 7 Years Ago",
+		href: "/programme/supernatural-shift",
+	},
+	{
 		image: "/images/events/sop-june-government-of-the-spirit.png",
 		alt: "School of Prayer June Edition — Government of the Spirit: Territorial Intercession, 13th June 8AM at the House of Prayer",
 		href: "/about/gatherings",
