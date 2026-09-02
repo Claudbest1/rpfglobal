@@ -1,3 +1,5 @@
+"use client";
+
 import { trackMetaEvent } from "@/lib/meta-pixel";
 
 const TELEGRAM_CHANNEL = "https://t.me/RPFglobal";
