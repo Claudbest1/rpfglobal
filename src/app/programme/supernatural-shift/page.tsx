@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LocationMap } from "@/components/LocationMap";
 import { SupernaturalShiftHeroRegister } from "@/components/SupernaturalShiftHeroRegister";
+import { SupernaturalShiftTracking } from "@/components/SupernaturalShiftTracking";
 import { TelegramRegisterButton } from "@/components/TelegramRegisterButton";
 import { ProseSection } from "@/components/content/ProseSection";
 import { PageTemplate } from "@/components/layout/PageTemplate";
@@ -32,6 +33,7 @@ export default function SupernaturalShiftPage() {
 			heroImageMobile={programme.heroImageMobile}
 			heroAction={<SupernaturalShiftHeroRegister />}
 		>
+			<SupernaturalShiftTracking />
 			<div className="mx-auto max-w-4xl space-y-12">
 				<ProseSection title="About Supernatural Shift">
 					<p>
@@ -44,6 +46,18 @@ export default function SupernaturalShiftPage() {
 						and host Reverend Temidayo Aderibigbe.
 					</p>
 				</ProseSection>
+
+				<div className="mx-auto max-w-md overflow-hidden rounded-2xl shadow-md sm:max-w-lg sm:rounded-3xl">
+					<Image
+						src="/images/events/arome-osayi-7-years-ago.jpg"
+						alt="Apostle Arome Osayi at Royal Priesthood Family Ministry — 7 Years Ago"
+						width={1080}
+						height={1350}
+						sizes="(max-width: 640px) 100vw, 512px"
+						unoptimized
+						className="h-auto w-full"
+					/>
+				</div>
 
 				<section className="card-colorful rounded-2xl border-l-4 border-l-rpf-purple p-6 sm:p-8">
 					<p className="text-sm font-semibold uppercase tracking-wider text-rpf-purple">
@@ -101,7 +115,7 @@ export default function SupernaturalShiftPage() {
 					</p>
 
 					<div className="mt-8 flex justify-center">
-						<TelegramRegisterButton variant="telegram" />
+						<TelegramRegisterButton variant="telegram" trackLead />
 					</div>
 				</section>
 
@@ -152,7 +166,7 @@ export default function SupernaturalShiftPage() {
 						everything you need for Supernatural Shift.
 					</p>
 					<div className="mt-6 flex justify-center">
-						<TelegramRegisterButton variant="telegram" />
+						<TelegramRegisterButton variant="telegram" trackLead />
 					</div>
 				</section>
 
